@@ -16,20 +16,26 @@ const items = [
         "title": "吃饭",
         "price": 200,
         "date": "2020-11-12",
-        "cid": 1
+        "cid": 2
     },
     {
         "id": 2,
-        "title": "去去医院体检",
+        "title": "假如发财了",
         "price": 200,
         "date": "2020-11-12",
-        "cid": 1
+        "cid": 3
     },
     {
         "id": 2,
         "title": "去去医院体检",
         "price": 200,
         "date": "2020-10-12",
+        "cid": 1
+    },{
+        "id": 3,
+        "title": "去去医院体检",
+        "price": 200,
+        "date": "2020-9-12",
         "cid": 1
     }
 ]
@@ -54,7 +60,7 @@ const categries = {
 
 
 const newItem = {
-    "id": 3,
+    "id": 5,
     "title": "工资",
     "price": 2000,
     "date": "2020-11-12",
@@ -116,6 +122,9 @@ class Home extends Component {
         const itemsWithCategory = items.map(item => {
             item.category = categries[item.cid]
             return item
+        }).filter(item => {
+            // 过滤，仅显示当前年月的记录
+            return item.date.includes(`${currentDate.year}-${currentDate.month}`)
         })
 
         let currIncome = 0;

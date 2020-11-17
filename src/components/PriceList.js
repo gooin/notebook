@@ -14,7 +14,7 @@ const PriceList = ({items, onEdit, onDelete}) => {
                         <Divider/>
                         <Row>
                             <Col span={4}>
-                                <Icons iconName={item.category.iconName}/>
+                                <Icons iconName={item.category.name}/>
                             </Col>
                             <Col span={8}>{item.title}</Col>
                             <Col span={4}>
