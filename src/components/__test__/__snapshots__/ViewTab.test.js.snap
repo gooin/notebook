@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test ViewTab component check snapshot 1`] = `
+<Tabs
+  onChange={[MockFunction]}
+  type="card"
+>
+  <TabPane
+    key="list"
+    tab={
+      <span>
+        <ForwardRef(UnorderedListOutlined) />
+        列表模式
+      </span>
+    }
+  />
+  <TabPane
+    key="chart"
+    tab={
+      <span>
+        <ForwardRef(PieChartOutlined) />
+        图表模式
+      </span>
+    }
+  />
+</Tabs>
+`;

@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 import PriceList from '../components/PriceList'
 import ViewTab from '../components/ViewTab'
 import MonthPicker from '../components/MonthPicker'
-import {Row, Col, Divider, Button} from 'antd';
+import {Row, Col} from 'antd';
 
-import {LIST_VIEW, TYPE_INCOME, TYPE_OUTCOME, parseToYearAndMonth, CHART_VIEW} from '../utility'
+import {LIST_VIEW, TYPE_INCOME, parseToYearAndMonth, CHART_VIEW} from '../utility'
 import logo from "../logo.svg";
 import TotalPrice from "../components/TotalPrice";
 import CreateBtn from "../components/CreateBtn";
 
 
-const items = [
+export const items = [
     {
         "id": 1,
         "title": "吃饭",
@@ -31,7 +31,7 @@ const items = [
         "price": 200,
         "date": "2020-10-12",
         "cid": 1
-    },{
+    }, {
         "id": 3,
         "title": "去去医院体检",
         "price": 200,
@@ -40,7 +40,7 @@ const items = [
     }
 ]
 
-const categries = {
+export const categries = {
     "1": {
         "id": 1,
         "name": "travel",
@@ -72,7 +72,8 @@ class Home extends Component {
         super(props);
         this.state = {
             items,
-            currentDate: parseToYearAndMonth(),
+            // 给定默认的时间写死
+            currentDate: parseToYearAndMonth('2020/11/18'),
             tabView: LIST_VIEW
         }
     }

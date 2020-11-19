@@ -8,6 +8,7 @@ const CreateBtn = ({onCreate}) => {
                 <Col span={4}/>
                 <Col span={16}>
                     <Button
+                        className={"creat-item-button"}
                         onClick={onCreate}
                         type="primary"
                         block={true}

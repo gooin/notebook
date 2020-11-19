@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Icons component check snapshot 1`] = `
+<IosCash
+  beat={false}
+  color="#6cf"
+  fontSize="30px"
+  rotate={false}
+  shake={false}
+  style={Object {}}
+/>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test TotalPrice component check snapshot 1`] = `
+"<Fragment>
+  <h4>
+    收入: 
+    1000
+    元 
+  </h4>
+  <h4>
+    支出: 
+    2000
+    元
+  </h4>
+</Fragment>"
+`;

@@ -3,6 +3,7 @@ import {Row, Col, Divider, Button} from 'antd';
 import {add0WhenLess10, range} from '../utility';
 import PropTypes from 'prop-types';
 
+
 class MonthPicker extends Component {
     constructor(props) {
         super(props);
@@ -22,17 +23,15 @@ class MonthPicker extends Component {
     }
 
     handleClick = (event) => {
-        // console.log("this", this)
-        // console.log("this", this.node)
-        // console.log("event", event.target);
-        //
-        // if (this.node.contains(event.target)) {
-        //     console.log("eee");
-        //     return;
-        // }
-        // this.setState({
-        //     isOpen: false
-        // })
+        console.log("this", this);
+
+        // 使用refs将dom节点挂载到this上
+        if (this.node.contains(event.target)) {
+            return;
+        }
+        this.setState({
+            isOpen: false
+        })
     }
 
     toggleDropdown = () => {
@@ -42,14 +41,14 @@ class MonthPicker extends Component {
     }
 
     onChangeSelectedYear = (event, year) => {
-        event.preventDefault();
+        // event.preventDefault();
         this.setState({
             selectedYear: year
         })
     }
 
     onChangeSelectedMonth = (event, month) => {
-        event.preventDefault();
+        // event.preventDefault();
         this.setState({
             selectedMonth: month
         })
@@ -67,9 +66,15 @@ class MonthPicker extends Component {
         const yearRange = range(9, year - 4);
         return (
             <div>
-                <div className="dropdown">
+                <div className="dropdown"
+                    // 将此dom节点挂载到this上
+                     ref={(ref) => {
+                         this.node = ref
+                     }}>
                     <h5>选择月份</h5>
-                    <button className="btn btn-secondary dropdown-toggle" type="button"
+                    <button className="btn btn-secondary dropdown-toggle month-selector" type="button"
+
+
                             onClick={this.toggleDropdown}
                     >
                         {`${year} 年 ${add0WhenLess10(month)} 月`}
@@ -83,6 +88,9 @@ class MonthPicker extends Component {
                                     <Row key={index}>
                                         <Col span={9}>
                                             <Button
+                                                ref={(ref) => {
+                                                    // this.buttonNode[index] = ref
+                                                }}
                                                 type={this.state.selectedYear === yearRange[index] ? "primary" : 'dashed'}
                                                 onClick={(event) => this.onChangeSelectedYear(event, yearRange[index])}
                                             >
@@ -92,6 +100,7 @@ class MonthPicker extends Component {
                                         <Divider type="vertical"/>
                                         <Col span={8}>
                                             <Button
+                                                className={'month-button'}
                                                 type={this.state.selectedMonth === monthNumber ? "primary" : 'dashed'}
                                                 onClick={(event) => this.onChangeSelectedMonth(event, monthNumber)}
                                             >

@@ -39,7 +39,6 @@ const ViewTab = ({activeTab, onTabViewChange}) => (
 );
 
 ViewTab.propType = {
-    activeTab: PropTypes.string.isRequired,
     onTabChange: PropTypes.func.isRequired
 }
 

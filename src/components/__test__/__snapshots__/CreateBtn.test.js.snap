@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test CreateBtn component check snapshot 1`] = `
+<div
+  style={
+    Object {
+      "margin": "1rem 0",
+    }
+  }
+>
+  <Row>
+    <Col
+      span={4}
+    />
+    <Col
+      span={16}
+    >
+      <Button
+        block={true}
+        ghost={false}
+        htmlType="button"
+        loading={false}
+        onClick={[MockFunction]}
+        type="primary"
+      >
+        创建一条新的记录
+      </Button>
+    </Col>
+    <Col
+      span={4}
+    />
+  </Row>
+</div>
+`;

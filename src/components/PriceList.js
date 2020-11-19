@@ -5,7 +5,7 @@ import Icons from './Icons';
 import PropTypes from 'prop-types';
 
 const PriceList = ({items, onEdit, onDelete}) => {
-    console.log('items :>> ', items);
+    // console.log('items :>> ', items);
     return (
         <>
             {
